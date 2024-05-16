@@ -1,0 +1,369 @@
+
+.bg-black{
+    background-color: #000000; /* Define a cor de fundo como preta */
+  }
+
+/* Configurações do Carrossel */
+
+  #img1
+{
+position: absolute;
+width: 100%;
+opacity: 0%;
+transition: 2s;
+z-index: 0;
+}
+
+#img1:hover{
+  opacity: 100%;
+}
+
+.carousel-caption {
+    text-shadow: black 0.1em 0.1em 0.5em
+}
+
+/* Configurações de Menu */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300&subset=latin-ext);
+
+ri-user-fill
+{
+    width: 13%
+}
+
+body {
+-moz-osx-font-smoothing:grayscale;
+-webkit-box-direction:normal;
+-webkit-box-orient:vertical;
+-webkit-font-smoothing:antialiased;
+background:#f5f5f5;
+color:#777;
+font-family:Montserrat, sans-serif;
+margin:0;
+}
+
+
+.nav-list{
+    justify-content: space-around;
+}
+
+nav {
+    position: absolute;
+	margin: 0, 0, 0, 0;
+    padding-right: 0%;
+	width: 100%;
+	background: #008FEA;
+	box-shadow:0 3px 15px rgba(0,0,0,.15);
+    z-index: 1;
+    justify-content: right;
+}
+
+
+nav ul {
+	padding: 0;
+	margin: 0;
+    display: inline-flex;
+	list-style: none;
+}
+
+#logo{
+    left: 0;
+    position: absolute;
+}
+
+#logo1{
+    width: 10vh;
+}
+
+
+nav ul li {
+	float: left;
+	position: relative;
+}
+
+nav ul li a {
+	display: block;
+	color: rgba(255, 255, 255, .9);
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	transition: all .3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+	background: rgba(0, 0, 0, .15);
+}
+
+nav ul li a:focus {
+	color: white;
+}
+
+nav ul li a:not(:only-child)::after {
+	padding-left: 4px;
+	content: ' ?';
+}
+
+nav ul li ul li {
+	min-width: 190px;
+}
+
+nav ul li ul li a {
+	background: transparent;
+	color: #555;
+	border-bottom: 1px solid #DDE0E7;
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:focus {
+	background: #eee;
+	color: #111;
+}
+
+.dropdown {
+	display: none;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 4px 10px rgba(10, 20, 30, .4);
+}
+
+nav ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+}
+
+nav ul li:hover .dropdown li{
+    display: block;
+}
+
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    .nav-list{
+        position: absolute;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #008FEA;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu{
+        z-index: 1;
+        right: 0;
+        position: absolute;
+        display: block;
+    }
+
+    #perfilimg{
+        position: relative;
+    }
+
+}
+
+.nav-list.active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+    from{
+opacity: 0;
+transform: translateX(50px);
+    }
+
+    to{
+opacity: 1;
+transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+    /*Faixa*/
+.faixa{
+    text-align: center;
+    font-weight: bold;
+width: 100%;
+height: 30vh;
+}
+
+h4{
+    text-align: center;
+    margin: auto;
+}
+
+  /*Card*/
+
+  .card{
+   margin: auto;
+   display: block;
+   box-shadow: 8px 20px 50px black;
+  }
+
+  .card-body{
+    text-align: center;
+    font-weight: bold;
+
+  }
+
+  #imgcard{
+    margin: auto;
+   display: block;
+    width: 45%;
+  }
+
+  /*Rodapé*/
+
+  footer{
+    background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 50px;
+  }
+
+  /*Form Login*/
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#divuser{
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-bottom: 4% ;
+    padding-right: 4%;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 8px 20px 50px black;
+
+}
+input, select{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+button{
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 1.5px;
+    color: white;
+    font-size: 15px;
+    
+}
+button:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+H1{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+/*Form Cadastro*/
+
+#divcad{
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 110vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-bottom: 4% ;
+    padding-right: 4%;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 8px 20px 50px black;
+
+}
+
+table{
+    width: 100%;
+   margin: auto;
+   
+}
+  
+td{
+    padding: 2%;
+}
+
+/* Message */
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  #fade .spinner-border {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hide {
+    display: none !important;
+  }
+  
+  #message {
+    width: 40%;
+  }
+  
+  .alert.alert-light p {
+    border-bottom: 1px solid #333;
+    padding: 1.2em 0;
+  }
