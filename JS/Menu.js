@@ -46,8 +46,6 @@ const mobileNavbar = new MobileNavbar(
 mobileNavbar.init();
 
 /*Configurações de CEP*/
-
-
 const addressForm = document.querySelector("#address-form");
 const cepInput = document.querySelector("#cep");
 const addressInput = document.querySelector("#address");

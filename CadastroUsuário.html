@@ -9,171 +9,216 @@
 
   <!-- Bootstrap icons -->
   <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-  />
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+/>
 
   <title>UNIUNI</title>
 
 
 </head>
 <body> 
+  <body id="checkout-page">
+
     <div id="fade" class="hide">
-        <div id="loader" class="spinner-border text-info hide" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div id="message" class="hide">
-          <div class="alert alert-light" role="alert">
-            <h4>Mensagem:</h4>
-            <p></p>
-            <button id="close-message" type="button" class="btn btn-secondary">
-              Fechar
-            </button>
-          </div>
+      <div id="loader" class="spinner-border text-info hide" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div id="message" class="hide">
+        <div class="alert alert-light" role="alert">
+          <h4>Mensagem:</h4>
+          <p></p>
+          <button id="close-message" type="button" class="btn btn-secondary">
+            Fechar
+          </button>
         </div>
       </div>
+    </div>
+
     <nav class="nav">
-        <ul>
-            <a href="index.html"> <li id="logo"><img id="logo1" src="https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg"></li></a>
-           
-            <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            </div>
-      <ul class="nav-list">   
-            <li><a href="index.html">Home</a>
-        <li><a href="#">O nas</a>
-            <li class="drop"><a href="#">Oferta</a>
-                <ul class="dropdown">
-                   
-                    <li><a href="#">Oferta 01</a></li>
-                    <li><a href="#">Oferta 02</a></li>
-                    <li><a href="#">Oferta 03</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Aktualnosci</a>
-            <li><a href="#">Kontakt</a>
-               
-               <li><a href="#"><img id="perfilimg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='28' height='28' fill='rgba(255,255,255,1)'%3E%3Cpath d='M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z'%3E%3C/path%3E%3C/svg%3E"></a></li> 
-               
-            </ul>
-            </ul>
-    </nav>
 
-    <div id="divcad" class="form-floating">
-        <h1>Cadastrar Usuário</h1>
-        <label class="labelInput">Nome de Usuário</label>
-        <input type="text" placeholder="Usuário" required>
-        <br><br>
-        <label class="labelInput">E-mail</label>
-        <input type="email" placeholder="Nome@exemplo.com" required>
-        <br><br>
-      <Table>
-        <tr>
-        <td>
-        <label class="labelInput">Senha aqui</label>
-        <input type="password" placeholder="A123..." required></td>
+      
+      <ul>
+          <a href="index.html"> <li id="logo"><img id="logo1" src="https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg"></li></a>
+         
+          <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+          </div>
+    <ul class="nav-list">   
+          <li><a href="index.html">Home</a>
+      <li><a href="#">O nas</a>
+          <li class="drop"><a href="#">Oferta</a>
+              <ul class="dropdown">
+                 
+                  <li><a href="#">Oferta 01</a></li>
+                  <li><a href="#">Oferta 02</a></li>
+                  <li><a href="#">Oferta 03</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Aktualnosci</a>
+          <li><a href="#">Kontakt</a>
+             
+             <li><a href="#"><img id="perfilimg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='28' height='28' fill='rgba(255,255,255,1)'%3E%3Cpath d='M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z'%3E%3C/path%3E%3C/svg%3E"></a></li> 
+             
+          </ul>
+          </ul>
+  </nav>
 
-        <td><label class="labelInput">Confirmar:</label>
-        <input type="password" placeholder="A123..." required></td>
-    </tr></Table>
-    <label for="name" class="labelInput">Grau:</label>
-    <select type="text"class="form-select shadow-none" placeholder="Grau"required>
-      <option>Ensino Fundamental Incompleto</option>
-      <option>Ensino Fundamental Completo</option>
-      <option>Ensino Médio Incompleto</option>  
-      <option>Ensino Médio Completo</option>
-      <option>Ensino Superior Incompleto</option>
-      <option>Ensino Superior Completo</option>
-    </select>
-    </td>
-    <table>
-        <tr>
-            <td>
-        <label>Data de Nascimento:</label>
-        <input type="date" name="data_nascimento" id="data_nascimento" required> </td>
-
+    
+      
+      <form id="address-form">
+        <div id="divcad" class="form-floating">
+          <h1>Cadastrar Usuário</h1>
+          <label class="labelInput">Nome de Usuário</label>
+          <input type="text" placeholder="Usuário" required>
+          <br><br>
+          <label class="labelInput">E-mail</label>
+          <input type="email" placeholder="Nome@exemplo.com" required>
+          <br><br>
+        <Table>
+          <tr>
           <td>
-            <label class="labelInput">Gênero:</label>
-            <select type="text" class="form-select shadow-none" placeholder="Gênero" required>
-              <option >Mulher</option>
-              <option >Homem</option>
-              <option >Outro</option>
-              <option>Prefiro não declarar</option>
-            </select>
-        </td>  
-            <table>
-<table>
-    <tr>
-        <td>
-            <label class="labelInput">CEP:</label>
-            <input  minlength="8" maxlength="8" id="cep" name="cep" 
-            type="text" placeholder="99999999" data-input required/>
-        </td>
-        <td>
-            <label class="labelInput">Rua:</label>
-            <input id="adress" name="adress" type="text" 
-            disabled data-input required/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="labelInput">Bairro:</label>
-            <input id="neighborhood" name="neighborhood" type="text"
-             disabled data-input required/>
-        </td>
-        <td>
-            <label class="labelInput">Cidade:</label>
-            <input id="city" name="city" type="text" 
-            disabled data-input required />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="labelInput">Estado:</label>
-            <select class="form-select shadow-none" id="region" name="region" disabled data-input required >
-                <option selected>Estado</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
+          <label class="labelInput">Senha aqui</label>
+          <input type="password" placeholder="A123..." required></td>
+  
+          <td><label class="labelInput">Confirmar:</label>
+          <input type="password" placeholder="A123..." required></td>
+      </tr></Table>
+      <label for="name" class="labelInput">Grau:</label>
+      <select type="text"class="form-select shadow-none" placeholder="Grau"required>
+        <option>Ensino Fundamental Incompleto</option>
+        <option>Ensino Fundamental Completo</option>
+        <option>Ensino Médio Incompleto</option>  
+        <option>Ensino Médio Completo</option>
+        <option>Ensino Superior Incompleto</option>
+        <option>Ensino Superior Completo</option>
+      </select>
+      </td>
+      <table>
+          <tr>
+              <td>
+          <label>Data de Nascimento:</label>
+          <input type="date" name="data_nascimento" id="data_nascimento" required> </td>
+  
+            <td>
+              <label class="labelInput">Gênero:</label>
+              <select type="text" class="form-select shadow-none" placeholder="Gênero" required>
+                <option >Mulher</option>
+                <option >Homem</option>
+                <option >Outro</option>
+                <option>Prefiro não declarar</option>
               </select>
-            </td>
-        <td>
-            <label class="labelInput">País:</label>
-            <input type="text" placeholder="" required >
+          </td>  
+        </table>
+        <table>
+          <tr>
+              <td> 
+                <label class="labelInput" for="cep">Digite o seu CEP</label>
+            <input
+              type="text"
+              id="cep"
+              name="cep"
+              placeholder="Digite o seu CEP"
+              maxlength="8"
+              minlength="8"
+              required
+            /> 
         </td>
-    </tr>
-</table>
+        <td>
+          <label class="labelInput" for="address">Rua</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Rua"
+              disabled
+              required
+              data-input
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="labelInput" for="neighborhood">Bairro</label>
+            <input
+              type="text"
+              id="neighborhood"
+              name="neighborhood"
+              placeholder="Bairro"
+              disabled
+              required
+              data-input
+            />
+   </td>
+              <td>
+                <label class="labelInput" for="city">Cidade</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Cidade"
+                  disabled
+                  required
+                  data-input
+                />
+                </td>
+                </tr>
+<tr>
+<td>
+            <label class="labelInput">Estado:</label>
+            <select
+              id="region"
+              disabled
+              required
+              data-input
+            >
+              <option selected>Estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+            </td>
+            <td>
+              <label class="labelInput">País:</label>
+              <input type="text" placeholder="" required >
+          </td></tr>
+
+        </table>
 
         Já tem uma conta? <a href="Usuário.html">Fazer Login</a>
         <br><br>
         <button id="save-btn" type="submit">Cadastrar</button>
+        </div>
+      </form>
     </div>
+   
+   
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
