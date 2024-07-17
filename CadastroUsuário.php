@@ -1,3 +1,15 @@
+<?php
+
+if(isset($_POST['submit']))
+{
+
+print_r($_POST['nome']);
+print_r($_POST['email']);
+print_r($_POST['senha']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -68,26 +80,26 @@
     </div>
   </div>
       
-      <form id="address-form">
+      <form action="CadastroUsuário.php" method="POST" id="address-form">
         <div id="divcad" class="form-floating">
           <h1>Cadastrar Usuário</h1>
           <label class="labelInput">Nome de Usuário</label>
-          <input type="text" placeholder="Usuário" required>
+          <input name="nome" type="text" id="nome" placeholder="Usuário" required>
           <br><br>
           <label class="labelInput">E-mail</label>
-          <input type="email" placeholder="Nome@exemplo.com" required>
+          <input name="email" type="email" placeholder="Nome@exemplo.com" required>
           <br><br>
         <Table>
           <tr>
           <td>
           <label class="labelInput">Senha aqui</label>
-          <input type="password" placeholder="A123..." required></td>
+          <input name="senha" type="password" placeholder="A123..." required></td>
   
           <td><label class="labelInput">Confirmar:</label>
-          <input type="password" placeholder="A123..." required></td>
+          <input name="senha_confirmacao" type="password" placeholder="A123..." required></td>
       </tr></Table>
       <label for="name" class="labelInput">Grau:</label>
-      <select type="text"class="form-select shadow-none" placeholder="Grau"required>
+      <select name="grau" type="text"class="form-select shadow-none" placeholder="Grau"required>
         <option>Ensino Fundamental Incompleto</option>
         <option>Ensino Fundamental Completo</option>
         <option>Ensino Médio Incompleto</option>  
@@ -100,11 +112,11 @@
           <tr>
               <td>
           <label>Data de Nascimento:</label>
-          <input type="date" name="data_nascimento" id="data_nascimento" required> </td>
+          <input name="dat_nasc" type="date" name="data_nascimento" id="data_nascimento" required> </td>
   
             <td>
               <label class="labelInput">Gênero:</label>
-              <select type="text" class="form-select shadow-none" placeholder="Gênero" required>
+              <select name="genero" type="text" class="form-select shadow-none" placeholder="Gênero" required>
                 <option >Mulher</option>
                 <option >Homem</option>
                 <option >Outro</option>
@@ -169,6 +181,7 @@
 <td>
             <label class="labelInput">Estado:</label>
             <select
+              name="estado"
               id="region"
               disabled
               required
@@ -206,94 +219,17 @@
             </td>
             <td>
               <label class="labelInput">País:</label>
-              <input type="text" placeholder="" required >
+              <input name="pais" type="text" placeholder="" required >
           </td></tr>
 
         </table>
 
         Já tem uma conta? <a href="Usuário.html">Fazer Login</a>
         <br><br>
-        <button id="save-btn" type="submit">Cadastrar</button>
+        <button name="submit" id="submit" type="submit">Cadastrar</button>
         </div>
       </form>
     </div>
-
-    <!--
-    <form id="address-form">
-    <div id="divcad" class="form-floating">
-    
-<table>
-    <tr>
-        <td>
-            <label class="labelInput">CEP:</label>
-            <input  minlength="8" maxlength="8" id="cep" name="cep" 
-            type="text" placeholder="99999999" data-input required/>
-        </td>
-        <td>
-            <label class="labelInput">Rua:</label>
-            <input id="adress" name="address" type="text" 
-            disabled data-input required/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="labelInput">Bairro:</label>
-            <input id="neighborhood" name="neighborhood" type="text"
-             disabled data-input required/>
-        </td>
-        <td>
-            <label class="labelInput">Cidade:</label>
-            <input id="city" name="city" type="text" 
-            disabled data-input required />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="labelInput">Estado:</label>
-            <select class="form-select shadow-none" id="region" name="region" disabled data-input required >
-                <option selected>Estado</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-              </select>
-            </td>
-        <td>
-            <label class="labelInput">País:</label>
-            <input type="text" placeholder="" required >
-        </td>
-    </tr>
-</table>
-
-        Já tem uma conta? <a href="Usuário.html">Fazer Login</a>
-        <br><br>
-        <button id="save-btn" type="submit">Cadastrar</button>
-    </div>
-  </form> -->
-   
    
 
 

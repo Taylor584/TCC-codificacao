@@ -161,7 +161,7 @@ const toggleMessage = (msg) => {
 // Close message modal
 closeButton.addEventListener("click", () => toggleMessage());
 
-// Save address
+//  address
 addressForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -170,7 +170,7 @@ addressForm.addEventListener("submit", (e) => {
   setTimeout(() => {
     toggleLoader();
 
-    toggleMessage("Endereço salvo com sucesso!");
+    toggleMessage("Cadastro salvo com sucesso!");
 
     addressForm.reset();
 

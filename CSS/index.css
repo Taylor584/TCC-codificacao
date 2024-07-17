@@ -287,7 +287,7 @@ input, select{
     border-radius: 10px;
     width: 100%;
 }
-button{
+input{
     background-color: dodgerblue;
     border: none;
     padding: 15px;
@@ -297,7 +297,7 @@ button{
     font-size: 15px;
     
 }
-button:hover{
+input:hover{
     background-color: deepskyblue;
     cursor: pointer;
 }
