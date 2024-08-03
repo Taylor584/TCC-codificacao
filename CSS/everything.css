@@ -289,7 +289,7 @@ input, select{
 }
 
 button{
-    background-color: rgb(38, 255, 30);
+    background-color: dodgerblue;
     border: none;
     padding: 15px;
     width: 100%;
@@ -299,7 +299,7 @@ button{
     
 }
 button:hover{
-    background-color: rgb(60, 255, 0);
+    background-color: deepskyblue;
     cursor: pointer;
 }
 
