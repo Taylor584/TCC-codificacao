@@ -287,8 +287,9 @@ input, select{
     border-radius: 10px;
     width: 100%;
 }
-input{
-    background-color: dodgerblue;
+
+button{
+    background-color: rgb(38, 255, 30);
     border: none;
     padding: 15px;
     width: 100%;
@@ -297,8 +298,8 @@ input{
     font-size: 15px;
     
 }
-input:hover{
-    background-color: deepskyblue;
+button:hover{
+    background-color: rgb(60, 255, 0);
     cursor: pointer;
 }
 

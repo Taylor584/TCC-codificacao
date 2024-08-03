@@ -1,13 +1,3 @@
-<?php
-
-if(isset($_POST['submit']))
-{
-
-print_r($_POST['nome']);
-print_r($_POST['email']);
-print_r($_POST['senha']);
-}
-?>
 
 
 <!DOCTYPE html>
@@ -79,7 +69,18 @@ print_r($_POST['senha']);
       </div>
     </div>
   </div>
-      
+  
+  <?php
+
+if(isset($_POST['submit']))
+{
+
+print_r($_POST['nome']);
+print_r($_POST['email']);
+print_r($_POST['senha']);
+}
+?>
+
       <form action="CadastroUsuário.php" method="POST" id="address-form">
         <div id="divcad" class="form-floating">
           <h1>Cadastrar Usuário</h1>
