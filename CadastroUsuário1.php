@@ -1,4 +1,15 @@
+<?php
+echo "PHP está funcionando.";
 
+if(isset($_POST['submit'])) {
+    echo "Submit foi pressionado.";
+    print_r($_POST['nome']);
+    print_r($_POST['email']);
+}
+else {
+  echo "O formulário não foi enviado.";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,19 +80,11 @@
       </div>
     </div>
   </div>
-  
-  <?php
+ 
 
-if(isset($_POST['submit']))
-{
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="address-form">
 
-print_r($_POST['nome']);
-print_r($_POST['email']);
-print_r($_POST['senha']);
-}
-?>
-
-      <form action="CadastroUsuário.php" method="POST" id="address-form">
+        <fieldset>
         <div id="divcad" class="form-floating">
           <h1>Cadastrar Usuário</h1>
           <label class="labelInput">Nome de Usuário</label>
@@ -227,7 +230,8 @@ print_r($_POST['senha']);
 
         Já tem uma conta? <a href="Usuário.html">Fazer Login</a>
         <br><br>
-        <button name="submit" id="submit" type="submit">Cadastrar</button>
+        <input name="submit" id="submit" type="submit">
+        <fildset/>
         </div>
       </form>
     </div>

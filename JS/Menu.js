@@ -163,8 +163,13 @@ closeButton.addEventListener("click", () => toggleMessage());
 
 //  address
 addressForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+  
+  
+      print_r($_POST['nome']);
+      print_r($_POST['email']);
 
+
+  
   toggleLoader();
 
   setTimeout(() => {
