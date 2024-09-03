@@ -327,6 +327,10 @@ H1{
 
 }
 
+.labelInput{
+    color: white;
+}
+
 table{
     width: 100%;
    margin: auto;

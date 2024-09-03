@@ -1,10 +1,49 @@
 <?php
-echo "PHP está funcionando.";
 
-if(isset($_POST['submit'])) {
-    echo "Submit foi pressionado.";
-    print_r($_POST['nome']);
-    print_r($_POST['email']);
+if(isset($_POST['submit']))
+ {
+    
+ // print_r($_POST['nome']);
+// print_r('<br>');
+ //   print_r($_POST['email']);
+  //  print_r('<br>');
+  //  print_r($_POST['senha']);
+   // print_r('<br>');
+   // print_r($_POST['grau']);
+  //  print_r('<br>');
+   // print_r($_POST['dat_nasc']);
+  //  print_r('<br>');
+   // print_r($_POST['genero']);
+   // print_r('<br>');
+  //  print_r($_POST['cep']);
+   // print_r('<br>');
+   // print_r($_POST['address']);
+    //print_r('<br>');
+    //print_r($_POST['neighborhood']);
+    //print_r('<br>');
+    //print_r($_POST['city']);
+    //print_r('<br>');
+    //print_r($_POST['estado']);
+    //print_r('<br>');
+    //print_r($_POST['pais']); 
+
+   include_once('config.php');
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $grau = $_POST['grau'];
+    $Data_Nasc = $_POST['dat_nasc'];
+    $Genero = $_POST['genero'];
+    $CEP = $_POST['cep'];
+    $Rua = $_POST['address'];
+    $Bairro = $_POST['neighborhood'];
+    $Cidade = $_POST['city'];
+    $Estado = $_POST['estado'];
+    $Pais = $_POST['pais'];
+
+$result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,grau,data_nasc,genero,CEP,Rua,Bairro,Cidade,Estado,País) VALUES ($nome,$email,$senha,$grau,$Data_Nasc,$Genero,$CEP,$Rua,$Bairro,$Cidade,$Estado,$Pais)");
+
 }
 else {
   echo "O formulário não foi enviado.";
