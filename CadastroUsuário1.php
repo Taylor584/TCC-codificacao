@@ -1,52 +1,44 @@
 <?php
 
-if(isset($_POST['submit']))
- {
-    
- // print_r($_POST['nome']);
-// print_r('<br>');
- //   print_r($_POST['email']);
-  //  print_r('<br>');
-  //  print_r($_POST['senha']);
-   // print_r('<br>');
-   // print_r($_POST['grau']);
-  //  print_r('<br>');
-   // print_r($_POST['dat_nasc']);
-  //  print_r('<br>');
-   // print_r($_POST['genero']);
-   // print_r('<br>');
-  //  print_r($_POST['cep']);
-   // print_r('<br>');
-   // print_r($_POST['address']);
-    //print_r('<br>');
-    //print_r($_POST['neighborhood']);
-    //print_r('<br>');
-    //print_r($_POST['city']);
-    //print_r('<br>');
-    //print_r($_POST['estado']);
-    //print_r('<br>');
-    //print_r($_POST['pais']); 
+if (isset($_POST['submit'])) {
+    include_once('config.php');
 
-   include_once('config.php');
+    // Escape das variáveis para evitar injeção SQL
+    $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+    $grau = mysqli_real_escape_string($conexao, $_POST['grau']);
+    $data_nasc = mysqli_real_escape_string($conexao, $_POST['dat_nasc']);
+    $genero = mysqli_real_escape_string($conexao, $_POST['genero']);
+    $cep = mysqli_real_escape_string($conexao, $_POST['cep']);
+    $rua = mysqli_real_escape_string($conexao, $_POST['address']);
+    $bairro = mysqli_real_escape_string($conexao, $_POST['neighborhood']);
+    $cidade = mysqli_real_escape_string($conexao, $_POST['city']);
+    $estado = mysqli_real_escape_string($conexao, $_POST['estado']);
+    $pais = mysqli_real_escape_string($conexao, $_POST['pais']);
 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $grau = $_POST['grau'];
-    $Data_Nasc = $_POST['dat_nasc'];
-    $Genero = $_POST['genero'];
-    $CEP = $_POST['cep'];
-    $Rua = $_POST['address'];
-    $Bairro = $_POST['neighborhood'];
-    $Cidade = $_POST['city'];
-    $Estado = $_POST['estado'];
-    $Pais = $_POST['pais'];
+    // Usando prepared statements para evitar injeção SQL
+    $stmt = $conexao->prepare("INSERT INTO usuarios (nome, email, senha, grau, data_nasc, genero, CEP, Rua, Bairro, Cidade, Estado, País) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-$result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,grau,data_nasc,genero,CEP,Rua,Bairro,Cidade,Estado,País) VALUES ($nome,$email,$senha,$grau,$Data_Nasc,$Genero,$CEP,$Rua,$Bairro,$Cidade,$Estado,$Pais)");
+    // Verifica se a preparação da consulta foi bem-sucedida
+    if ($stmt === false) {
+        die('Erro ao preparar a consulta: ' . $conexao->error);
+    }
 
-}
-else {
-  echo "O formulário não foi enviado.";
+    // Liga as variáveis aos parâmetros
+    $stmt->bind_param("ssssssssssss", $nome, $email, $senha, $grau, $data_nasc, $genero, $cep, $rua, $bairro, $cidade, $estado, $pais);
+
+    // Executa a consulta
+    if ($stmt->execute()) {
+        echo "Dados inseridos com sucesso!";
+    } else {
+        echo "Erro ao inserir dados: " . $stmt->error;
+    }
+
+    // Fecha a declaração
+    $stmt->close();
+} else {
+    echo "O formulário não foi enviado.";
 }
 ?>
 
