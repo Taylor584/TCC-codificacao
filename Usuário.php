@@ -42,14 +42,16 @@
 
     <div id="divuser">
         <h1>Fazer Login</h1>
-        <input type="text" placeholder="Usuário">
+        <form action="testLogin.php" method="POST">
+        <input type="text" name="email" placeholder="E-mail">
         <br><br>
-        <input type="password" placeholder="Senha">
+        <input type="password" name="senha" placeholder="Senha">
         <br><br>
-        Não tem uma conta? <a href="CadastroUsuário.html">Cadastrar Usuário</a>
+        Não tem uma conta? <a href="CadastroUsuário1.php">Cadastrar Usuário</a>
         <br><br>
 
-        <button>Enviar</button>
+        <input class="inputSubmit" name="submit" id="submit" type="submit" value="Enviar">
+    </form>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

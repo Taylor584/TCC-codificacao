@@ -259,7 +259,7 @@ if (isset($_POST['submit'])) {
 
         </table>
 
-        Já tem uma conta? <a href="Usuário.html">Fazer Login</a>
+        Já tem uma conta? <a href="Usuário.php">Fazer Login</a>
         <br><br>
         <input name="submit" id="submit" type="submit">
         <fildset/>
